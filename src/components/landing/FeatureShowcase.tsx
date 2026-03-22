@@ -10,7 +10,7 @@ import {
   SendHorizonal,
 } from "lucide-react";
 
-/* ——— Conversation data ——— */
+/* --- Conversation data --- */
 
 const conversations = [
   {
@@ -103,7 +103,7 @@ const conversations = [
           </div>
         ),
       },
-      { role: "bot" as const, text: "Old regime saves you 89,400/yr more. You're already using 80C via PPF — adding ELSS would give you market-linked returns + the same tax benefit." },
+      { role: "bot" as const, text: "Old regime saves you 89,400/yr more. You're already using 80C via PPF - adding ELSS would give you market-linked returns + the same tax benefit." },
     ],
   },
   {
@@ -139,7 +139,7 @@ const conversations = [
   },
 ];
 
-/* ——— Main component ——— */
+/* --- Main component --- */
 
 export function FeatureShowcase() {
   const [active, setActive] = useState(0);

@@ -55,7 +55,7 @@
 }
 
 /* ============================================
-   ARTHA DESIGN SYSTEM — Fintech Color Palette
+   ARTHA DESIGN SYSTEM - Fintech Color Palette
    ============================================ */
 
 :root {
@@ -80,7 +80,7 @@
   --ring: oklch(0.50 0.15 240);
   --radius: 0.75rem;
 
-  /* Semantic — Fintech */
+  /* Semantic - Fintech */
   --success: oklch(0.55 0.16 160);
   --success-foreground: oklch(1 0 0);
   --warning: oklch(0.60 0.16 70);
@@ -107,7 +107,7 @@
 }
 
 .dark {
-  /* Dark Mode (DEFAULT) — Artha Money Green */
+  /* Dark Mode (DEFAULT) - Artha Money Green */
   --background: oklch(0.13 0.015 155);
   --foreground: oklch(0.93 0.01 155);
   --card: oklch(0.17 0.018 155);
@@ -127,7 +127,7 @@
   --input: oklch(0.26 0.02 155);
   --ring: oklch(0.72 0.19 155);
 
-  /* Semantic — Fintech */
+  /* Semantic - Fintech */
   --success: oklch(0.70 0.17 160);
   --success-foreground: oklch(0.15 0.02 160);
   --warning: oklch(0.78 0.16 80);
@@ -156,6 +156,22 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.72 0.19 155 / 0.3) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: oklch(0.72 0.19 155 / 0.25);
+    border-radius: 9999px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.72 0.19 155 / 0.45);
   }
   body {
     @apply bg-background text-foreground;
@@ -165,7 +181,7 @@
   }
 }
 
-/* Financial number formatting — tabular numerals for aligned columns */
+/* Financial number formatting - tabular numerals for aligned columns */
 .financial-number {
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
@@ -191,7 +207,7 @@
   background: linear-gradient(135deg, oklch(0.55 0.16 160), oklch(0.70 0.17 145));
 }
 
-/* Gradient text — safe for use with framer-motion (no filter conflict) */
+/* Gradient text - safe for use with framer-motion (no filter conflict) */
 .gradient-text {
   background: linear-gradient(135deg, oklch(0.72 0.19 155), oklch(0.60 0.14 175));
   -webkit-background-clip: text;

@@ -16,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Artha — Your Personal Budget Companion",
+  title: "Artha - Your Personal Budget Companion",
   description:
     "AI-powered personal budget advisor for Indian users. Plan savings, compare investments, optimize taxes, and build wealth with personalized financial guidance.",
 };

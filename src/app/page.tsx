@@ -29,12 +29,12 @@ const steps = [
   {
     icon: MessageSquare,
     title: "Just ask",
-    desc: "Type your financial question in plain language. No forms, no menus — just tell Artha what you want to know.",
+    desc: "Type your financial question in plain language. No forms, no menus - just tell Artha what you want to know.",
   },
   {
     icon: Lightbulb,
     title: "Get instant answers",
-    desc: "Artha analyzes your numbers, compares instruments, adjusts for inflation, and gives you a clear plan — right in the chat.",
+    desc: "Artha analyzes your numbers, compares instruments, adjusts for inflation, and gives you a clear plan - right in the chat.",
   },
   {
     icon: CircleDollarSign,
@@ -96,9 +96,7 @@ export default function HomePage() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg"
         >
-          A chat-based financial planner built for India. Just type what you
-          need — savings plans, SIP comparisons, tax optimization — and
-          get actionable answers instantly.
+          One chat away from your smartest financial move.
         </motion.p>
 
         <motion.div
@@ -123,7 +121,7 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* ========= PROMPT EXAMPLES — scrolling ticker ========= */}
+      {/* ========= PROMPT EXAMPLES - scrolling ticker ========= */}
       <section className="relative z-10 py-8">
         <motion.div
           initial={{ opacity: 0 }}
@@ -145,7 +143,7 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* ========= FEATURE SHOWCASE — chat conversations ========= */}
+      {/* ========= FEATURE SHOWCASE - chat conversations ========= */}
       <section id="features" className="relative z-10 py-20">
         <div className="mx-auto mb-12 max-w-2xl px-6 text-center">
           <motion.h2

@@ -13,7 +13,7 @@ import type { ParsedSegment, RichComponent, MarkerType } from '@/types/chat';
  * - EXTRACT
  */
 const MARKER_REGEX =
-  /:::(GOAL_CARD|COMPARISON_TABLE|SIP_CALCULATOR|TAX_BREAKDOWN|SAVINGS_TIMELINE|OPPORTUNITY_COST|EXTRACT)\s+(\{[\s\S]*?\}):::/g;
+  /:::(GOAL_CARD|COMPARISON_TABLE|SIP_CALCULATOR|TAX_BREAKDOWN|SAVINGS_TIMELINE|OPPORTUNITY_COST|EMI_CARD|INFLATION_VISUALIZER|FINANCIAL_HEALTH_SCORE|EXTRACT)\s+(\{[\s\S]*?\}):::/g;
 
 /**
  * Parse a raw response string from the AI into an array of segments.
@@ -48,11 +48,11 @@ export function parseResponse(text: string): ParsedSegment[] {
       if (component) {
         segments.push({ type: 'rich', component });
       } else {
-        // Unknown marker type — keep as text
+        // Unknown marker type - keep as text
         segments.push({ type: 'text', content: match[0] });
       }
     } catch {
-      // Malformed JSON — render the raw marker as plain text
+      // Malformed JSON - render the raw marker as plain text
       segments.push({ type: 'text', content: match[0] });
     }
 
@@ -136,11 +136,99 @@ function buildComponent(
         },
       };
 
-    // Reserved for future rich components
-    case 'TAX_BREAKDOWN':
     case 'SAVINGS_TIMELINE':
+      return {
+        type: 'SAVINGS_TIMELINE',
+        data: {
+          monthlyAmount: Number(data.monthlyAmount ?? 0),
+          returnRate: Number(data.returnRate ?? 0),
+          tenureMonths: Number(data.tenureMonths ?? 0),
+          ...(Array.isArray(data.milestones)
+            ? {
+                milestones: data.milestones.map((m: Record<string, unknown>) => ({
+                  month: Number(m.month ?? 0),
+                  label: String(m.label ?? ''),
+                })),
+              }
+            : {}),
+        },
+      };
+
+    case 'TAX_BREAKDOWN':
+      return {
+        type: 'TAX_BREAKDOWN',
+        data: {
+          grossIncome: Number(data.grossIncome ?? 0),
+          oldRegimeTax: Number(data.oldRegimeTax ?? 0),
+          newRegimeTax: Number(data.newRegimeTax ?? 0),
+          deductions: Array.isArray(data.deductions)
+            ? data.deductions.map((d: Record<string, unknown>) => ({
+                section: String(d.section ?? ''),
+                amount: Number(d.amount ?? 0),
+                ...(d.description ? { description: String(d.description) } : {}),
+              }))
+            : [],
+          ...(data.recommendation ? { recommendation: String(data.recommendation) } : {}),
+        },
+      };
+
+    case 'EMI_CARD':
+      return {
+        type: 'EMI_CARD',
+        data: {
+          principal: Number(data.principal ?? 0),
+          rate: Number(data.rate ?? 0),
+          tenure: Number(data.tenure ?? 0),
+          emi: Number(data.emi ?? 0),
+          totalInterest: Number(data.totalInterest ?? 0),
+          totalPayable: Number(data.totalPayable ?? 0),
+          ...(data.prepaymentSavings != null ? { prepaymentSavings: Number(data.prepaymentSavings) } : {}),
+        },
+      };
+
+    case 'INFLATION_VISUALIZER':
+      return {
+        type: 'INFLATION_VISUALIZER',
+        data: {
+          currentAmount: Number(data.currentAmount ?? 0),
+          years: Number(data.years ?? 0),
+          inflationRate: Number(data.inflationRate ?? 0),
+          futureAmount: Number(data.futureAmount ?? 0),
+          realValue: Number(data.realValue ?? 0),
+        },
+      };
+
     case 'OPPORTUNITY_COST':
-      return null;
+      return {
+        type: 'OPPORTUNITY_COST',
+        data: {
+          purchaseItem: String(data.purchaseItem ?? ''),
+          purchasePrice: Number(data.purchasePrice ?? 0),
+          assetValueAfter: Number(data.assetValueAfter ?? 0),
+          investmentValueAfter: Number(data.investmentValueAfter ?? 0),
+          opportunityCost: Number(data.opportunityCost ?? 0),
+          years: Number(data.years ?? 0),
+        },
+      };
+
+    case 'FINANCIAL_HEALTH_SCORE':
+      return {
+        type: 'FINANCIAL_HEALTH_SCORE',
+        data: {
+          score: Number(data.score ?? 0),
+          savingsRate: Number(data.savingsRate ?? 0),
+          dtiRatio: Number(data.dtiRatio ?? 0),
+          emergencyMonths: Number(data.emergencyMonths ?? 0),
+          insuranceCoverage: Number(data.insuranceCoverage ?? 0),
+          breakdown: Array.isArray(data.breakdown)
+            ? data.breakdown.map((b: Record<string, unknown>) => ({
+                metric: String(b.metric ?? ''),
+                score: Number(b.score ?? 0),
+                status: (b.status as 'good' | 'average' | 'poor') ?? 'poor',
+              }))
+            : [],
+        },
+      };
 
     default:
       return null;

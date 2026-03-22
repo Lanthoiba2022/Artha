@@ -72,3 +72,45 @@ export interface TaxSlab {
   max: number;
   rate: number;
 }
+
+export interface EMIResult {
+  emi: number;
+  totalPayable: number;
+  totalInterest: number;
+  principal: number;
+}
+
+export interface AmortizationEntry {
+  month: number;
+  emi: number;
+  principalPart: number;
+  interestPart: number;
+  balance: number;
+}
+
+export interface PrepaymentResult {
+  originalInterest: number;
+  newInterest: number;
+  interestSaved: number;
+  newTenureMonths: number;
+  monthsSaved: number;
+}
+
+export interface BuyVsInvestResult {
+  assetValueAfter: number;
+  investmentValueAfter: number;
+  opportunityCost: number;
+  recommendation: string;
+}
+
+export interface DepreciationEntry {
+  year: number;
+  value: number;
+  depreciationAmount: number;
+}
+
+export interface OpportunityResult {
+  totalLoanCost: number;
+  ifInvestedInstead: number;
+  opportunityCost: number;
+}

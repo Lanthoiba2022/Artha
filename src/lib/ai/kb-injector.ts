@@ -1,11 +1,29 @@
 import { SAVING_PRINCIPLES_KB } from '@/lib/kb/saving-principles';
 import { INVESTMENT_KB } from '@/lib/kb/investment';
 import { TAX_OPTIMIZATION_KB } from '@/lib/kb/tax-optimization';
+import { BUDGETING_KB } from '@/lib/kb/budgeting';
+import { BEHAVIORAL_FINANCE_KB } from '@/lib/kb/behavioral-finance';
+import { DEBT_MANAGEMENT_KB } from '@/lib/kb/debt-management';
+import { RETIREMENT_KB } from '@/lib/kb/retirement';
+import { RISK_MANAGEMENT_KB } from '@/lib/kb/risk-management';
+import { INDIAN_INSTRUMENTS_KB } from '@/lib/kb/indian-instruments';
+import { WEALTH_BUILDING_KB } from '@/lib/kb/wealth-building';
+import { FINANCIAL_RATIOS_KB } from '@/lib/kb/financial-ratios';
+import { LIFE_STAGES_KB } from '@/lib/kb/life-stages';
 
 const KB_SECTIONS: Record<string, string> = {
   saving: SAVING_PRINCIPLES_KB,
   investment: INVESTMENT_KB,
   tax: TAX_OPTIMIZATION_KB,
+  budgeting: BUDGETING_KB,
+  behavioral: BEHAVIORAL_FINANCE_KB,
+  debt: DEBT_MANAGEMENT_KB,
+  retirement: RETIREMENT_KB,
+  risk: RISK_MANAGEMENT_KB,
+  instruments: INDIAN_INSTRUMENTS_KB,
+  wealth: WEALTH_BUILDING_KB,
+  ratios: FINANCIAL_RATIOS_KB,
+  lifestages: LIFE_STAGES_KB,
 };
 
 const KB_TRIGGER_MAP: Record<string, string[]> = {
@@ -24,6 +42,57 @@ const KB_TRIGGER_MAP: Record<string, string[]> = {
     "tax", "80c", "80d", "hra", "regime", "deduction", "itr",
     "capital gains", "ltcg", "stcg", "80ccd", "tax loss", "harvest",
     "exemption", "old regime", "new regime",
+  ],
+  budgeting: [
+    "budget", "50/30/20", "zero-based", "envelope", "track expense",
+    "spending plan", "monthly plan", "expense track", "reverse budget",
+    "pay yourself first", "overspend", "cash flow",
+  ],
+  behavioral: [
+    "bias", "loss aversion", "anchor", "herd", "fomo", "impulse",
+    "emotional", "panic sell", "sunk cost", "lifestyle inflation",
+    "mental accounting", "endowment", "behavioral", "psychology",
+    "overconfiden", "greed", "fear",
+  ],
+  debt: [
+    "debt", "loan", "emi", "credit card", "borrow", "repay",
+    "avalanche", "snowball", "prepay", "consolidat", "dti",
+    "interest rate", "personal loan", "home loan", "car loan",
+    "mortgage", "default",
+  ],
+  retirement: [
+    "retire", "retirement", "pension", "4% rule", "fire",
+    "corpus", "annuity", "swp", "epf", "nps", "old age",
+    "superannuation", "bucket strategy", "25x rule",
+  ],
+  risk: [
+    "insurance", "term plan", "health insurance", "life insurance",
+    "cover", "claim", "nominee", "hlv", "risk", "protect",
+    "critical illness", "disability", "premium", "ulip",
+    "endowment", "mediclaim",
+  ],
+  instruments: [
+    "ppf", "epf", "nps", "ssy", "sukanya", "scss", "senior citizen",
+    "sgb", "gold bond", "kvp", "nsc", "recurring deposit", "rd",
+    "post office", "small saving", "government scheme", "provident fund",
+  ],
+  wealth: [
+    "compound", "rule of 72", "time value", "start early",
+    "wealth", "rich", "crore", "asset allocation", "rebalance",
+    "rupee cost", "stp", "lump sum vs sip", "double money",
+    "grow wealth", "net worth",
+  ],
+  ratios: [
+    "savings rate", "dti", "debt to income", "net worth",
+    "expense ratio", "financial ratio", "benchmark", "return benchmark",
+    "financial independence", "fi ratio", "liquid net worth",
+    "wealth to income", "how much should i save", "am i on track",
+  ],
+  lifestages: [
+    "first job", "student", "20s", "30s", "40s", "50s", "60s",
+    "young", "retire", "career start", "marriage", "child",
+    "education fund", "life stage", "age", "beginner",
+    "starting out", "college", "fresher",
   ],
 };
 

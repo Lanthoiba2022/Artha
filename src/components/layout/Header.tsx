@@ -1,6 +1,6 @@
 "use client";
 
-import { Moon, Sun, Menu, Sparkles } from "lucide-react";
+import { Moon, Sun, Menu, IndianRupee } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 
@@ -12,8 +12,7 @@ export function Header({ onMenuClick }: HeaderProps) {
   const { theme, setTheme } = useTheme();
 
   return (
-    <header className="flex h-14 items-center justify-between border-b border-border/50 bg-background/80 px-4 backdrop-blur-md">
-      {/* Left: hamburger (mobile) + logo */}
+    <header className="flex h-14 items-center justify-between border-b border-border/40 bg-background/80 px-4 backdrop-blur-md">
       <div className="flex items-center gap-2.5">
         <Button
           variant="ghost"
@@ -25,14 +24,13 @@ export function Header({ onMenuClick }: HeaderProps) {
           <Menu className="h-5 w-5" />
         </Button>
         <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg gradient-primary">
-            <Sparkles className="h-3.5 w-3.5 text-white" />
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg gradient-primary">
+            <IndianRupee className="h-4 w-4 text-white" />
           </div>
           <span className="text-lg font-bold tracking-tight">Artha</span>
         </div>
       </div>
 
-      {/* Right: theme toggle */}
       <Button
         variant="ghost"
         size="icon"

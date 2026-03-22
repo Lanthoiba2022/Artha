@@ -1,0 +1,23 @@
+export const BEHAVIORAL_FINANCE_KB = `
+BEHAVIORAL FINANCE KNOWLEDGE BASE
+
+Loss Aversion: People feel the pain of losing ₹10,000 roughly twice as intensely as the pleasure of gaining ₹10,000. This causes investors to hold losing stocks hoping they will recover (avoiding the pain of booking a loss) while selling winners too early (locking in the pleasure of a gain). The result is a portfolio full of losers. Counter this by setting predefined stop-loss levels and rebalancing rules before emotions take over. If a stock drops 20 percent from your purchase price with no fundamental reason to hold, sell it.
+
+Anchoring Bias: The tendency to rely too heavily on the first piece of information encountered. If you bought a stock at ₹500 and it drops to ₹300, you anchor to ₹500 and wait to break even instead of evaluating current fundamentals. Similarly, seeing a product originally priced at ₹5,000 on sale for ₹3,000 makes you feel you are saving ₹2,000 rather than spending ₹3,000. In investing, always evaluate based on current value and future potential, not your purchase price.
+
+Herd Mentality: Following the crowd leads to buying at peaks and selling at bottoms. When colleagues and social media influencers celebrate stock market gains, FOMO drives latecomers to invest at elevated valuations. When markets crash, panic selling spreads. The 2021 crypto boom saw millions of Indians invest near all-time highs. Historically, the best returns come from buying when others are fearful. Stick to your asset allocation plan regardless of market sentiment.
+
+Confirmation Bias: Seeking information that confirms your existing beliefs while ignoring contradictory evidence. If you believe a particular stock or sector will do well, you unconsciously consume only positive news about it. Counter this by actively seeking opposing viewpoints, reading bear case analyses, and maintaining a decision journal where you record your reasoning. Review past predictions honestly to calibrate your judgment.
+
+Sunk Cost Fallacy: Continuing to invest in something because you have already invested significant money or effort, even when the rational choice is to stop. Paying ₹50,000 for a course you never attend but refusing to quit because you already paid. Holding a terrible mutual fund because you have held it for 5 years. The money already spent is gone regardless - focus only on future expected returns when making decisions.
+
+Lifestyle Inflation: As income rises, spending rises proportionally, leaving the savings rate unchanged. A person earning ₹50,000 saving ₹5,000 gets a raise to ₹80,000 but now saves only ₹8,000 - the same 10 percent. The additional ₹30,000 income disappears into a bigger flat, a new car EMI, premium subscriptions, and dining upgrades. Combat this by committing to save at least 50 percent of every raise. If your salary increases by ₹20,000, auto-increase your SIP by ₹10,000 before you adjust to the new income.
+
+Impulse Spending: Triggered by emotions - stress shopping, celebratory splurges, or boredom-driven online purchases. Indian e-commerce sales (Big Billion Days, Great Indian Festival) exploit urgency bias with countdown timers and limited stock warnings. Apply the 24-hour rule for purchases above ₹2,000 and the 72-hour rule for purchases above ₹10,000. Remove saved payment methods from shopping apps and unsubscribe from sale notifications.
+
+Mental Accounting: Treating money differently based on its source or intended purpose. Splurging a ₹50,000 bonus on luxury items while carrying ₹50,000 in credit card debt at 40 percent interest. Or treating tax refunds as free money. All money is fungible - ₹1 from a bonus has the same value as ₹1 from salary. Use this bias positively by labeling savings accounts for specific goals, which makes you less likely to raid them.
+
+Endowment Effect: Overvaluing something simply because you own it. Refusing to sell inherited property even when the rental yield is 2 percent and the capital could earn 12 percent in equity. Overpricing your used car because of sentimental attachment. When evaluating an asset, ask yourself: if I did not already own this, would I buy it today at its current price? If the answer is no, consider selling.
+
+Strategies to Overcome Biases: Automate your investments through SIPs to remove emotional decision-making. Write an Investment Policy Statement defining your asset allocation, rebalancing rules, and criteria for buying or selling. Review your portfolio no more than once a quarter - frequent checking increases anxiety and trading. Find an accountability partner or fee-only financial advisor who can provide objective perspective. Keep a decision journal to track the reasoning behind investment choices and review it annually.
+`;

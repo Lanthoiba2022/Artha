@@ -21,3 +21,19 @@ export const cessRate = 0.04;
 
 /** Income limit for Section 87A rebate under new regime */
 export const rebateLimit = 700000;
+
+/**
+ * India FY 2025-26 Old Tax Regime Slabs
+ */
+export const oldRegimeSlabs: TaxSlab[] = [
+  { min: 0, max: 250000, rate: 0 },
+  { min: 250001, max: 500000, rate: 0.05 },
+  { min: 500001, max: 1000000, rate: 0.20 },
+  { min: 1000001, max: Infinity, rate: 0.30 },
+];
+
+/** Standard deduction under old regime for FY 2025-26 */
+export const oldRegimeStandardDeduction = 50000;
+
+/** Income limit for Section 87A rebate under old regime */
+export const oldRegimeRebateLimit = 500000;

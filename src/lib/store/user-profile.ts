@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
 import type { UserProfile, RiskTolerance, TaxRegime } from "@/types/user";
 
 const DEFAULT_PROFILE: UserProfile = {
@@ -42,34 +41,20 @@ function computeDerived(profile: UserProfile) {
 }
 
 export const useUserProfileStore = create<UserProfileState>()(
-  persist(
-    (set) => ({
-      ...DEFAULT_PROFILE,
-      ...computeDerived(DEFAULT_PROFILE),
+  (set) => ({
+    ...DEFAULT_PROFILE,
+    ...computeDerived(DEFAULT_PROFILE),
 
-      updateField: (field, value) =>
-        set((state) => {
-          const updated = { ...state, [field]: value };
-          return { [field]: value, ...computeDerived(updated) };
-        }),
-
-      reset: () =>
-        set(() => ({
-          ...DEFAULT_PROFILE,
-          ...computeDerived(DEFAULT_PROFILE),
-        })),
-    }),
-    {
-      name: "artha-profile",
-      partialize: (state) => ({
-        monthlyIncome: state.monthlyIncome,
-        monthlyExpenses: state.monthlyExpenses,
-        age: state.age,
-        city: state.city,
-        riskTolerance: state.riskTolerance,
-        taxRegime: state.taxRegime,
-        existingInvestments: state.existingInvestments,
+    updateField: (field, value) =>
+      set((state) => {
+        const updated = { ...state, [field]: value };
+        return { [field]: value, ...computeDerived(updated) };
       }),
-    }
-  )
+
+    reset: () =>
+      set(() => ({
+        ...DEFAULT_PROFILE,
+        ...computeDerived(DEFAULT_PROFILE),
+      })),
+  })
 );

@@ -14,7 +14,7 @@ export function GridBackground() {
         }}
       />
 
-      {/* Main emerald glow — top center */}
+      {/* Main emerald glow - top center */}
       <motion.div
         className="absolute left-1/2 top-0 h-[700px] w-[900px] -translate-x-1/2 -translate-y-1/4 rounded-full"
         style={{
@@ -32,7 +32,7 @@ export function GridBackground() {
         }}
       />
 
-      {/* Secondary warm glow — right */}
+      {/* Secondary warm glow - right */}
       <div
         className="absolute right-0 top-1/4 h-[400px] w-[400px] translate-x-1/4 rounded-full opacity-20"
         style={{
@@ -41,7 +41,7 @@ export function GridBackground() {
         }}
       />
 
-      {/* Subtle gold accent — bottom left */}
+      {/* Subtle gold accent - bottom left */}
       <div
         className="absolute bottom-1/4 left-0 h-[350px] w-[350px] -translate-x-1/4 rounded-full opacity-10"
         style={{

@@ -4,7 +4,6 @@ import { guardInput } from "@/lib/security/input-guard";
 import { checkRateLimit } from "@/lib/security/rate-limiter";
 import { getRelevantKBSections } from "@/lib/ai/kb-injector";
 import { buildSystemPrompt } from "@/lib/ai/system-prompt";
-import { arthaTools } from "@/lib/ai/tools";
 import type { UserProfile } from "@/types/user";
 import type { Goal } from "@/types/finance";
 
@@ -21,7 +20,6 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    // AI SDK v6 sends { messages: UIMessage[], ...extras }
     const rawMessages: UIMessage[] = body.messages ?? [];
     const extras = body.userProfile ?? {};
     const rawGoals = body.goals ?? [];
@@ -37,7 +35,7 @@ export async function POST(req: Request) {
       });
     }
 
-    // Extract text from the latest user message (v6 uses parts, not content)
+    // Extract text from the latest user message
     const lastUserMsg = [...rawMessages].reverse().find((m) => m.role === "user");
     let lastUserText = "";
     if (lastUserMsg) {
@@ -50,14 +48,19 @@ export async function POST(req: Request) {
       }
     }
 
-    // Input guard
+    // Input guard - jailbreak, prompt injection, topic control, PII masking
     if (lastUserText) {
       const guard = guardInput(lastUserText);
       if (!guard.allowed) {
         const msg =
           guard.redirect ||
+          guard.reason ||
           "I can only help with personal finance topics. Please ask me about budgeting, saving, investing, or tax planning.";
         return new Response(msg, { status: 200 });
+      }
+      // Use sanitized text if PII was masked
+      if (guard.sanitized) {
+        lastUserText = guard.sanitized;
       }
     }
 
@@ -105,26 +108,28 @@ export async function POST(req: Request) {
             m.parts as Array<{ type: string; text?: string }>
           );
         }
-        return {
-          role: m.role as "user" | "assistant",
-          content: text,
-        };
+        return { role: m.role as "user" | "assistant", content: text };
       })
       .filter((m) => m.content.length > 0);
 
-    // Stream from Claude
+    // Stream from Claude — no tool calls, all calculations are done
+    // inline by the model using formulas in the system prompt.
     const result = streamText({
-      model: anthropic("claude-sonnet-4-20250514"),
+      model: anthropic(process.env.ANTHROPIC_MODEL || "claude-sonnet-4-20250514"),
+      maxOutputTokens: Number(process.env.MAX_TOKENS) || 4096,
       system: systemPrompt,
       messages: modelMessages,
-      tools: arthaTools,
+      onError: (err) => {
+        console.error("streamText error:", err);
+      },
     });
 
     return result.toTextStreamResponse();
   } catch (error) {
     console.error("Chat API error:", error);
-    return new Response("An error occurred processing your request.", {
-      status: 500,
-    });
+    return new Response(
+      "I'm having trouble processing your request right now. Please try again in a moment.",
+      { status: 200 }
+    );
   }
 }

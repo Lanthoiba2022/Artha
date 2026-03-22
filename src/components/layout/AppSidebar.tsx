@@ -1,6 +1,6 @@
 "use client";
 
-import { Wallet, CreditCard, TrendingUp, User, Target, BarChart3 } from "lucide-react";
+import { IndianRupee, CreditCard, TrendingUp, User, PiggyBank, LineChart } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { useUserProfileStore } from "@/lib/store/user-profile";
 import { useGoalsStore } from "@/lib/store/goals";
@@ -40,14 +40,14 @@ export function AppSidebar() {
   return (
     <div className="flex h-full flex-col overflow-y-auto p-4">
       {/* Profile Summary */}
-      <div className="mb-5 rounded-xl border border-border/50 bg-card/50 p-3.5">
+      <div className="mb-5 rounded-xl border border-border/40 bg-card/40 p-3.5 backdrop-blur-sm">
         <h3 className="mb-3 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           <User className="h-3 w-3" />
-          Profile Summary
+          Profile
         </h3>
         <div className="space-y-2.5">
           <StatRow
-            icon={Wallet}
+            icon={IndianRupee}
             label="Income"
             value={monthlyIncome ? formatINR(monthlyIncome) : "Not set"}
           />
@@ -70,15 +70,15 @@ export function AppSidebar() {
       </div>
 
       {/* Active Goals */}
-      <div className="mb-5 rounded-xl border border-border/50 bg-card/50 p-3.5">
+      <div className="mb-5 rounded-xl border border-border/40 bg-card/40 p-3.5 backdrop-blur-sm">
         <h3 className="mb-3 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          <Target className="h-3 w-3" />
-          Active Goals
+          <PiggyBank className="h-3 w-3" />
+          Goals
         </h3>
         <div className="space-y-3">
           {activeGoals.length === 0 && (
-            <p className="text-xs text-muted-foreground/70">
-              No active goals yet. Start chatting to set your first goal.
+            <p className="text-xs text-muted-foreground/60">
+              No goals yet. Ask Artha to help you set one.
             </p>
           )}
           {activeGoals.map((goal) => {
@@ -90,7 +90,6 @@ export function AppSidebar() {
                   100
                 )
               : 0;
-
             return (
               <div key={goal.id} className="space-y-1.5">
                 <div className="flex items-center justify-between text-sm">
@@ -107,15 +106,15 @@ export function AppSidebar() {
       </div>
 
       {/* Quick Stats */}
-      <div className="rounded-xl border border-border/50 bg-card/50 p-3.5">
+      <div className="rounded-xl border border-border/40 bg-card/40 p-3.5 backdrop-blur-sm">
         <h3 className="mb-3 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          <BarChart3 className="h-3 w-3" />
-          Quick Stats
+          <LineChart className="h-3 w-3" />
+          Stats
         </h3>
         <div className="space-y-2">
           <div className="flex items-center justify-between text-sm">
             <span className="text-muted-foreground">Profile Complete</span>
-            <span className="font-medium">
+            <span className="font-medium text-primary">
               {Math.round(profileCompleteness)}%
             </span>
           </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { MessageSquare } from "lucide-react";
 import type { ConversationPhase } from "@/types/chat";
 
 const PHASE_SUGGESTIONS: Record<ConversationPhase, string[]> = {
@@ -41,13 +42,14 @@ export function SuggestionChips({
   if (chips.length === 0) return null;
 
   return (
-    <div className="flex gap-2 overflow-x-auto px-4 py-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+    <div className="mx-auto flex max-w-3xl gap-2 overflow-x-auto px-4 py-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
       {chips.map((chip) => (
         <button
           key={chip}
           onClick={() => onSelect(chip)}
-          className="shrink-0 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-foreground shadow-sm transition-all hover:border-primary/50 hover:bg-primary/10 hover:text-primary active:scale-95"
+          className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-border/40 bg-card/40 px-3.5 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur-sm transition-all hover:border-primary/40 hover:bg-primary/10 hover:text-primary active:scale-95"
         >
+          <MessageSquare className="h-3 w-3" />
           {chip}
         </button>
       ))}
