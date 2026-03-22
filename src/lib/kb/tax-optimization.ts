@@ -1,0 +1,19 @@
+export const TAX_OPTIMIZATION_KB = `
+TAX OPTIMIZATION KNOWLEDGE BASE
+
+Section 80C: This is the most widely used deduction with a combined limit of ₹1.5 lakh per financial year under the old tax regime. Eligible instruments include ELSS mutual funds (3-year lock-in, best returns potential at 12-15 percent), PPF (15-year lock-in, 7.1 percent, fully exempt), EPF (employee contribution), NSC (5-year lock-in), SCSS, life insurance premiums, children's tuition fees (up to 2 children), and home loan principal repayment. Prioritize ELSS for wealth creation and PPF for guaranteed safe returns.
+
+Section 80CCD(1B): An additional deduction of ₹50,000 over and above the 80C limit is available for contributions to the National Pension System. This effectively gives a total NPS deduction potential of ₹2 lakh (₹1.5L under 80C + ₹50K under 80CCD1B). NPS invests in a mix of equity, corporate bonds, and government securities. The partial withdrawal restrictions and annuity requirement at retirement are the main drawbacks, but the extra ₹50K deduction makes it worthwhile for those in the 30 percent tax bracket, saving ₹15,600 in tax.
+
+Section 80D: Deduction for health insurance premiums — ₹25,000 for self and family, plus an additional ₹25,000 for parents (₹50,000 if parents are senior citizens). Maximum total deduction can reach ₹1 lakh if both the taxpayer and parents are senior citizens. Preventive health check-ups up to ₹5,000 are included within this limit. Always buy adequate health cover — it serves dual purpose of tax saving and financial protection against medical emergencies.
+
+HRA Exemption: If you receive House Rent Allowance and pay rent, the exempt amount is the lowest of three values: actual HRA received, rent paid minus 10 percent of basic salary, or 50 percent of basic salary (metro cities) or 40 percent (non-metro). For example, if basic is ₹50,000, HRA is ₹25,000, and rent is ₹20,000, the exemption is the least of ₹25,000, ₹15,000 (20K minus 5K), or ₹25,000 — so ₹15,000 is exempt. Keep rent receipts and landlord PAN (if rent exceeds ₹1L per year) for claiming this.
+
+New vs Old Tax Regime: The new regime offers lower slab rates but eliminates most deductions. As a general rule, the new regime is beneficial if your total deductions under the old regime are less than ₹3 to ₹3.5 lakh. If you actively claim 80C, 80D, HRA, home loan interest, and NPS deductions totaling more than ₹3.5L, the old regime likely saves more tax. Salaried individuals can switch between regimes each year. Calculate both before choosing.
+
+Capital Gains Tax: Short-term capital gains (equity held less than 12 months) are taxed at a flat 20 percent. Long-term capital gains (equity held 12 months or more) above ₹1.25 lakh per year are taxed at 12.5 percent. For debt funds, gains are taxed at your income slab rate regardless of holding period. Plan redemptions to stay within the ₹1.25L LTCG exemption each year by staggering sales across financial years.
+
+Tax Loss Harvesting: If you hold investments showing unrealized losses, you can sell them to book the loss and use it to offset capital gains in the same financial year. Short-term losses can offset both short-term and long-term gains. Long-term losses can only offset long-term gains. Unabsorbed losses can be carried forward for 8 years. After selling, you can repurchase the same or a similar fund — there is no wash sale rule in India.
+
+ELSS vs PPF: Both qualify under 80C but differ significantly. ELSS offers higher return potential at 12 to 15 percent historically, has only a 3-year lock-in, and is market-linked. PPF offers guaranteed 7.1 percent returns, has a 15-year lock-in (partial withdrawals from year 7), and the entire maturity amount is tax-free (EEE status). For young investors with a long horizon, ELSS is generally preferred. For conservative investors or those nearing retirement, PPF provides safety and guaranteed returns.
+`;

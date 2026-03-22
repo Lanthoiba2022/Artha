@@ -39,6 +39,12 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -48,73 +54,103 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* ============================================
+   ARTHA DESIGN SYSTEM — Fintech Color Palette
+   ============================================ */
+
 :root {
+  /* Light Mode */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --foreground: oklch(0.15 0.02 260);
+  --card: oklch(0.98 0.005 250);
+  --card-foreground: oklch(0.15 0.02 260);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --popover-foreground: oklch(0.15 0.02 260);
+  --primary: oklch(0.50 0.15 240);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.55 0.18 290);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.96 0.005 250);
+  --muted-foreground: oklch(0.50 0.02 250);
+  --accent: oklch(0.96 0.005 250);
+  --accent-foreground: oklch(0.15 0.02 260);
+  --destructive: oklch(0.55 0.22 25);
+  --border: oklch(0.91 0.01 250);
+  --input: oklch(0.91 0.01 250);
+  --ring: oklch(0.50 0.15 240);
+  --radius: 0.75rem;
+
+  /* Semantic — Fintech */
+  --success: oklch(0.55 0.16 160);
+  --success-foreground: oklch(1 0 0);
+  --warning: oklch(0.60 0.16 70);
+  --warning-foreground: oklch(0.15 0.02 60);
+  --info: oklch(0.52 0.14 240);
+  --info-foreground: oklch(1 0 0);
+
+  /* Charts */
+  --chart-1: oklch(0.50 0.15 240);
+  --chart-2: oklch(0.55 0.18 290);
+  --chart-3: oklch(0.55 0.16 160);
+  --chart-4: oklch(0.60 0.16 70);
+  --chart-5: oklch(0.55 0.22 25);
+
+  /* Sidebar */
+  --sidebar: oklch(0.98 0.005 250);
+  --sidebar-foreground: oklch(0.15 0.02 260);
+  --sidebar-primary: oklch(0.50 0.15 240);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.96 0.005 250);
+  --sidebar-accent-foreground: oklch(0.15 0.02 260);
+  --sidebar-border: oklch(0.91 0.01 250);
+  --sidebar-ring: oklch(0.50 0.15 240);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Dark Mode (DEFAULT) — Artha Money Green */
+  --background: oklch(0.13 0.015 155);
+  --foreground: oklch(0.93 0.01 155);
+  --card: oklch(0.17 0.018 155);
+  --card-foreground: oklch(0.93 0.01 155);
+  --popover: oklch(0.20 0.015 155);
+  --popover-foreground: oklch(0.93 0.01 155);
+  --primary: oklch(0.72 0.19 155);
+  --primary-foreground: oklch(0.13 0.03 155);
+  --secondary: oklch(0.60 0.14 175);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.20 0.015 155);
+  --muted-foreground: oklch(0.62 0.01 155);
+  --accent: oklch(0.20 0.018 155);
+  --accent-foreground: oklch(0.93 0.01 155);
+  --destructive: oklch(0.65 0.18 20);
+  --border: oklch(0.26 0.02 155);
+  --input: oklch(0.26 0.02 155);
+  --ring: oklch(0.72 0.19 155);
+
+  /* Semantic — Fintech */
+  --success: oklch(0.70 0.17 160);
+  --success-foreground: oklch(0.15 0.02 160);
+  --warning: oklch(0.78 0.16 80);
+  --warning-foreground: oklch(0.15 0.02 80);
+  --info: oklch(0.65 0.15 240);
+  --info-foreground: oklch(1 0 0);
+
+  /* Charts */
+  --chart-1: oklch(0.72 0.19 155);
+  --chart-2: oklch(0.60 0.14 175);
+  --chart-3: oklch(0.70 0.17 130);
+  --chart-4: oklch(0.78 0.16 80);
+  --chart-5: oklch(0.65 0.18 20);
+
+  /* Sidebar */
+  --sidebar: oklch(0.17 0.018 155);
+  --sidebar-foreground: oklch(0.93 0.01 155);
+  --sidebar-primary: oklch(0.72 0.19 155);
+  --sidebar-primary-foreground: oklch(0.13 0.03 155);
+  --sidebar-accent: oklch(0.20 0.018 155);
+  --sidebar-accent-foreground: oklch(0.93 0.01 155);
+  --sidebar-border: oklch(0.26 0.02 155);
+  --sidebar-ring: oklch(0.72 0.19 155);
 }
 
 @layer base {
@@ -127,4 +163,95 @@
   html {
     @apply font-sans;
   }
+}
+
+/* Financial number formatting — tabular numerals for aligned columns */
+.financial-number {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Typing indicator animation */
+@keyframes typing-dot {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-4px); }
+}
+
+.typing-dot {
+  animation: typing-dot 1.4s ease-in-out infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Gradient utilities */
+.gradient-primary {
+  background: linear-gradient(135deg, oklch(0.55 0.17 155), oklch(0.50 0.14 175));
+}
+.gradient-success {
+  background: linear-gradient(135deg, oklch(0.55 0.16 160), oklch(0.70 0.17 145));
+}
+
+/* Gradient text — safe for use with framer-motion (no filter conflict) */
+.gradient-text {
+  background: linear-gradient(135deg, oklch(0.72 0.19 155), oklch(0.60 0.14 175));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Infinite scroll ticker */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Smooth entrance animation */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.35s ease-out both;
+}
+
+/* Staggered children */
+.stagger-children > * {
+  animation: fade-in-up 0.35s ease-out both;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 60ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 120ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 180ms; }
+
+/* Subtle glow for focused input */
+.input-glow:focus-within {
+  box-shadow: 0 0 0 2px oklch(0.72 0.19 155 / 0.25);
+}
+
+/* Glass card effect */
+.glass-card {
+  background: oklch(0.19 0.015 260 / 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid oklch(0.28 0.015 260 / 0.5);
+}
+:root .glass-card {
+  background: oklch(1 0 0 / 0.7);
+  border: 1px solid oklch(0.91 0.01 250 / 0.8);
+}
+
+/* Message bubble tail shapes */
+.bubble-user {
+  border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
+}
+.bubble-bot {
+  border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
+}
+
+/* Pulse glow for bot avatar */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.72 0.19 155 / 0.3); }
+  50% { box-shadow: 0 0 0 6px oklch(0.72 0.19 155 / 0); }
+}
+.avatar-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
 }
